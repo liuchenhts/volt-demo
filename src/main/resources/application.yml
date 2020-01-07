@@ -1,0 +1,24 @@
+server:
+  port: 8030
+  servlet:
+    context-path: /volt
+
+logging:
+  level:
+    org.springframework: INFO
+    au.com.chen: DEBUG
+
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: 0.0.0.0:9092
+      group-id: volt
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: 0.0.0.0:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+
