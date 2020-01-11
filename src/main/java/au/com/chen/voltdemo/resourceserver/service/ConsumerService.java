@@ -13,7 +13,17 @@ public class ConsumerService {
     private final Logger logger = LoggerFactory.getLogger(ConsumerService.class);
 
     @KafkaListener(topics = "my-topic", groupId = "my-group")
-    public void consume(String message) throws IOException {
-        logger.info(String.format("#### -> Consumed message -> %s", message));
+    public void consumeWorker1(String message) throws IOException {
+        logger.info(String.format("------>Processor 1 Consumed message: %s", message));
+    }
+
+    @KafkaListener(topics = "my-topic", groupId = "my-group")
+    public void consumeWorker2(String message) throws IOException {
+        logger.info(String.format("------>Processor 2 Consumed message: %s", message));
+    }
+
+    @KafkaListener(topics = "my-topic", groupId = "my-group")
+    public void consumeWorker3(String message) throws IOException {
+        logger.info(String.format("------>Processor 3 Consumed message: %s", message));
     }
 }

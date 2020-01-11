@@ -12,15 +12,9 @@ public class ResourceController {
     @Autowired
     ProducerService producerService;
 
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
-    public String home() {
-        return "home";
-    }
-
     @GetMapping(value = "/producer")
     public String producer(@RequestParam("message") String message) {
         producerService.send(message);
-
         return "Message sent to the Kafka Topic user Successfully";
     }
 

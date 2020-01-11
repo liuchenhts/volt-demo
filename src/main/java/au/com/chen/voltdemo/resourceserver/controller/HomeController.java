@@ -1,26 +1,35 @@
 package au.com.chen.voltdemo.resourceserver.controller;
 
 
-import au.com.chen.voltdemo.resourceserver.service.ProducerService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HomeController {
 
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    @GetMapping(value = "/home")
     public String home() {
         return "home page";
     }
 
-    @RequestMapping(value = "/private", method = RequestMethod.GET)
+    @GetMapping(value = "/private")
     public String privatePage() {
         return "private page";
     }
 
-    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    @GetMapping(value = "/admin")
     public String admin() {
         return "admin page";
+    }
+
+    @GetMapping("/private-data")
+    public String privateData() {
+        return "private data";
+    }
+
+    @GetMapping("/admin-data")
+    public String adminData() {
+        return "admin data";
     }
 
 }
