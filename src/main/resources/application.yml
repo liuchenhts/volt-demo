@@ -19,11 +19,3 @@ spring:
 
 app:
   topic-name: my-topic
-
-security:
-  oauth2:
-    client:
-      client-id: client
-      client-secret: password
-      scope: read,write
-      auto-approve-scopes: '.*'

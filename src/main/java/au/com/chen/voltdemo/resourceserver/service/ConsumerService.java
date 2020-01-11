@@ -14,16 +14,16 @@ public class ConsumerService {
 
     @KafkaListener(topics = "my-topic", groupId = "my-group")
     public void consumeWorker1(String message) throws IOException {
-        logger.info(String.format("------>Processor 1 Consumed message: %s", message));
+        logger.info(String.format("------> Processor 1 consumed message: %s", message));
     }
 
     @KafkaListener(topics = "my-topic", groupId = "my-group")
     public void consumeWorker2(String message) throws IOException {
-        logger.info(String.format("------>Processor 2 Consumed message: %s", message));
+        logger.info(String.format("------> Processor 2 consumed message: %s", message));
     }
 
     @KafkaListener(topics = "my-topic", groupId = "my-group")
     public void consumeWorker3(String message) throws IOException {
-        logger.info(String.format("------>Processor 3 Consumed message: %s", message));
+        logger.info(String.format("------> Processor 3 consumed message: %s", message));
     }
 }
