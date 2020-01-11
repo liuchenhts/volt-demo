@@ -3,7 +3,8 @@
 * Get Access Token
 * Use Access Token to call an api to send event to Kafka topic with 3 partitions
 * Implemented 3 consumers to consume Kafka topic in a load balancing semantics
-
+* Use Swagger url to get the details of the api
+    * http://localhost:8030/volt/swagger-ui.html
 
 # How to run the Demo
 * git clone the repo
